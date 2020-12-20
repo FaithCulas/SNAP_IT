@@ -5,26 +5,27 @@ import {Octicons} from '@expo/vector-icons';
 
 import AppText from './AppText';
 
-function Profile({name,address,phone}) {
+function Profile({name,address,phone,image}) {
     return (
         <View style={styles.container}>
             <View style={styles.graphbutton}>
-                <Octicons name="graph" size={20} onPress={()=>Alert.alert("graphs")}></Octicons>
+                <Octicons name="graph" size={20} onPress={()=>Alert.alert("graphs")} style={{paddingRight:20}}></Octicons>
+                <AntDesign name="user" size={20} onPress={()=>Alert.alert("profile")}></AntDesign>
             </View>
             <View>
-                <Image style={styles.pic} source={require("../assets/profile.png")}></Image>
+                {<Image style={styles.pic} source={require("../assets/profile.png")}></Image>}
             </View>
             <View style={styles.username}>
                 <AppText style={styles.title}>{name}</AppText>
             </View>
             <View style={styles.content1}>
             <View style={styles.userdetails}>
-            <AntDesign name="home" size={25} color="dodgerblue"></AntDesign>
+                <AntDesign name="home" size={25} color="dodgerblue"></AntDesign>
                 <AppText style={styles.subtitle}>{address}</AppText>
             </View>
             <View style={styles.userdetails}>
                 <AntDesign name="phone" size={25} color="dodgerblue"></AntDesign>
-                <AppText>{phone}</AppText>
+                <AppText style={styles.subtitle}>{phone}</AppText>
             </View>
             </View>
             
@@ -55,19 +56,26 @@ const styles = StyleSheet.create({
         alignSelf:"center"
     },
     graphbutton:{
-        alignItems:"flex-end",
+        display:"flex",
+        flexDirection:"row",
+        justifyContent:"flex-end",
         paddingRight:20,
         paddingTop:20
     },
     title:{
-        color:"grey"
+        fontSize:20,
+        fontWeight:"bold",
     },
     scanbutton:{
         marginVertical:50,
         alignItems:"center"
     },
     subtitle:{
-        color:"grey"
+        paddingLeft:10,
+        paddingTop:5,
+        justifyContent:"center",
+        alignItems:"center",
+        fontSize:15
     },
     username:{
         alignItems:"center"

@@ -2,16 +2,18 @@ import React from 'react';
 import {Text,StyleSheet,Platform} from 'react-native';
 
 
-function AppText(props) {
+function AppText({children,style}) {
     return (
-        <Text style={styles.text}>{props.children}</Text>
+        <Text style={[styles.text],style }>{children}</Text>
     );
 }
 
 
 const styles = StyleSheet.create({
     text:{
-        color:"black",
+        color:"green",
+        justifyContent:"center",
+        alignItems:"center",
         marginLeft:10,
         ...Platform.select({
             ios:{
