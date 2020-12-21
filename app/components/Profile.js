@@ -8,10 +8,10 @@ import AppText from './AppText';
 function Profile({name,address,phone,image}) {
     return (
         <View style={styles.container}>
-            <View style={styles.graphbutton}>
+            {/* <View style={styles.graphbutton}>
                 <Octicons name="graph" size={20} onPress={()=>Alert.alert("graphs")} style={{paddingRight:20}}></Octicons>
-                <AntDesign name="user" size={20} onPress={()=>Alert.alert("profile")}></AntDesign>
-            </View>
+                <AntDesign name="user" size={20} onPress={()=>Alert.alert("graphs")}></AntDesign>
+            </View> */}
             <View>
                 {<Image style={styles.pic} source={require("../assets/profile.png")}></Image>}
             </View>

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Image, ImageBackground,StyleSheet, View, Text,Button,Platform, Alert} from 'react-native';
 
+
 import LoginButton from '../components/LoginButton';
 import RegisterButton from '../components/RegisterButton'
-function WelcomeScreen(props) {
+function WelcomeScreen({navigation}) {
     return (
        <ImageBackground
        style={styles.background}
@@ -11,8 +12,8 @@ function WelcomeScreen(props) {
            <View style={styles.logoContainer}>
            <Text style={styles.tagline}>SnapIT</Text>
            </View>
-           <LoginButton title="Login" onPress={()=>Alert.alert("pressed me")}></LoginButton>
-           <RegisterButton title="Register" onPress={()=>Alert.alert("pressed me")}></RegisterButton>
+           <LoginButton title="Login" onPress={()=>navigation.navigate("login")}></LoginButton>
+           <RegisterButton title="Register" onPress={()=>navigation.navigate("register")}></RegisterButton>
        </ImageBackground>
     )
 }

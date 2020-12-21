@@ -6,19 +6,19 @@ import AppText from '../components/AppText';
 import ListItem from '../components/ListItem';
 import Icon from '../components/Icon'
 
-function AccountScreen({name}) {
+function AccountScreen({navigation, name}) {
     return (
         <View style={styles.container}>
             <ListItem
                 title="Faith Culas"
                 image={require("../assets/profile.png")}
-                onPress={()=>Alert.alert("profile")}
+                onPress={()=>navigation.navigate("profile")}
             ></ListItem>
             
             <ListItem
                 title="settings"
                 icon={<Icon name="account-settings" backColor="#ff8e71" />}
-                onPress={()=>Alert.alert("settings")}
+                onPress={()=>navigation.navigate("info")}
             ></ListItem>
 
             <ListItem
