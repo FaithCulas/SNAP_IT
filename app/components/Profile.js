@@ -4,6 +4,7 @@ import {AntDesign} from '@expo/vector-icons';
 import {Octicons} from '@expo/vector-icons';
 
 import AppText from './AppText';
+import Nfc from '../components/Nfc';
 
 function Profile({name,address,phone,image}) {
     return (
@@ -30,7 +31,7 @@ function Profile({name,address,phone,image}) {
             </View>
             
             <View style={styles.scanbutton}>
-                <AntDesign name="scan1" size={80} onPress={()=>Alert.alert("scan")}></AntDesign>
+                <Nfc/>
             </View>
             
             
